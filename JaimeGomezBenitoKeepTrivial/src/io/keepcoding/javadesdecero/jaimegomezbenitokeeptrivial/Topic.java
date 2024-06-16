@@ -38,8 +38,7 @@ public class Topic {
         } else {
             teamsCompleted.remove(team);
         }
-        // Verificar si todos los equipos han completado este tema
-        this.completed = teamsCompleted.size() == teamsCompleted.size(); // teamsCompleted.size() obtiene el número de equipos completados
+        this.completed = teamsCompleted.size() == teamsCompleted.size(); 
     }
 
     public boolean isCompleted() {

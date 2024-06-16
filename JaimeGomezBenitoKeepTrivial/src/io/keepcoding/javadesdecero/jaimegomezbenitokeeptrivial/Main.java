@@ -58,7 +58,6 @@ public class Main {
                 currentTeam.addScore(1);
                 System.out.println("¡Correcto! Puntuación del equipo " + currentTeam.getName() + ": " + currentTeam.getScore());
 
-                // Marcar el tema como completado para este equipo
                 question.getTopic().setCompletedForTeam(currentTeam, true);
             } else {
                 System.out.println("Incorrecto. La respuesta correcta era: " + question.getRightOption());
@@ -78,8 +77,6 @@ public class Main {
             }
 
             System.out.println();
-
-            // Verificar si algún equipo ha completado todos los temas
             for (Team team : teams) {
                 if (team.hasCompletedAllTopics(topics)) {
                     exit = true;
@@ -114,7 +111,6 @@ public class Main {
     }
 
     private static Question getRandomQuestion(ArrayList<Topic> topics, Team team) {
-        // Filtrar solo temas que no están completos para este equipo
         List<Topic> availableTopics = new ArrayList<>();
         for (Topic topic : topics) {
             if (!topic.isCompletedForTeam(team)) {
